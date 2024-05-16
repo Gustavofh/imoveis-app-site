@@ -10,20 +10,21 @@ export function Filter({ onFilter }) {
   };
 
   return (
-    <div>
+    <div className='Filters'><br/>
       <label>
         Estado:
-        <input type="text" value={state} onChange={(e) => setState(e.target.value.toLowerCase)} />
-      </label><br/>
+        <input type="text" value={state} onChange={(e) => setState(e.target.value)} />
+      </label>
       <label>
         Cidade:
-        <input type="text" value={city} onChange={(e) => setCity(e.target.value.toLowerCase)} />
-      </label><br/>
+        <input type="text" value={city} onChange={(e) => setCity(e.target.value)} />
+      </label>
       <label>
         Bairro:
-        <input type="text" value={neighborhood} onChange={(e) => setNeighborhood(e.target.value.toLowerCase)} />
-      </label>
-      <button onClick={handleFilter}>Filtrar</button>
+        <input type="text" value={neighborhood} onChange={(e) => setNeighborhood(e.target.value)} />
+      </label><br/><br/>
+      <button className='filter-btn' onClick={handleFilter}>Filtrar</button>
+      <br/>
     </div>
   );
 };

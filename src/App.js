@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Filter } from './components/Filters';
 import { FinalTable } from './components/Table';
+import './App.css';
 
 const App = () => {
   const [filter, setFilter] = useState({ state: '', city: '', neighborhood: '' });

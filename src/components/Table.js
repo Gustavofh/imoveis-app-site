@@ -8,22 +8,24 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
 
+const testTable = [
+    { "state": "SP", "city": "São Paulo", "neighborhood": "Centro", "value": 500000, "address": "Rua A, 123", "propertyType": "Apartamento" },
+    { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
+    { "state": "RS", "city": "Porto Alegre", "neighborhood": "Medianeira", "value": 900809, "address": "Avenida a, 102", "propertyType": "Casa" },
+    { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
+    { "state": "ES", "city": "Vitoria", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
+    { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
+    { "state": "SC", "city": "Florianopolis", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Apartamento" },
+    { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
+    { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
+    { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
+    { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
+    { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
+]
+
 export const FinalTable = ({ filter }) => {
 
-    const [data, setData] = React.useState([
-        { "state": "SP", "city": "São Paulo", "neighborhood": "Centro", "value": 500000, "address": "Rua A, 123", "propertyType": "Apartamento" },
-        { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
-        { "state": "RS", "city": "Porto Alegre", "neighborhood": "Medianeira", "value": 900809, "address": "Avenida a, 102", "propertyType": "Casa" },
-        { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
-        { "state": "ES", "city": "Vitoria", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
-        { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
-        { "state": "SC", "city": "Florianopolis", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Apartamento" },
-        { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
-        { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
-        { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
-        { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
-        { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
-    ]);
+    const [data, setData] = React.useState(testTable);
 
     const [filteredData, setFilteredData] = React.useState(data);
 
@@ -39,7 +41,7 @@ export const FinalTable = ({ filter }) => {
       }, [filter, data]);
     
     return (
-        <TableContainer component={Paper}>
+        <TableContainer className='FinalTable' component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                 <TableRow>
