@@ -1,12 +1,16 @@
-import './App.css';
+import React, { useState } from 'react';
 import { Filter } from './components/Filters';
+import { FinalTable } from './components/Table';
 
-function App() {
+const App = () => {
+  const [filter, setFilter] = useState({ state: '', city: '', neighborhood: '' });
+
   return (
-    <div className="App">
-      <Filter />
+    <div>
+      <Filter onFilter={setFilter} />
+      <FinalTable filter={filter} />
     </div>
   );
-}
+};
 
 export default App;

@@ -1,39 +1,29 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-export function Filter() {
-    const [state, setState] = useState('');
-    const [city, setCity] = useState('');
-    const [neighborhood, setNeighborhood] = useState('');
-    
-    const handleFilterState = (e) => {
-        e.preventDefault();
-        setState(state)
-        console.log(state)
-    }
+export function Filter({ onFilter }) {
+  const [state, setState] = useState('');
+  const [city, setCity] = useState('');
+  const [neighborhood, setNeighborhood] = useState('');
 
-    const handleFilterCity = (e) => {
-        e.preventDefault();
-        setCity(city)
-        console.log(city)
-    }
+  const handleFilter = () => {
+    onFilter({ state, city, neighborhood });
+  };
 
-    const handleFilterNeighborhood = (e) => {
-        e.preventDefault();
-        setCity(city)
-        console.log(city)
-    }
-
-    return (
-        <div className='all-filters'>Include your filters!
-            <form className='FilterLocationState' onSubmit={handleFilterState}>
-                <input type='text' onChange={(e) => setState(e.target.value)} placeholder='Filter by state'/>
-            </form>
-            <form className='FilterLocationCity' onSubmit={handleFilterCity}>
-                <input type='text' onChange={(e) => setCity(e.target.value)} placeholder='Filter by city'/>
-            </form>
-            <form className='FilterLocationNeighborhood' onSubmit={handleFilterNeighborhood}>
-                <input type='text' onChange={(e) => setCity(e.target.value)} placeholder='Filter by neighborhood'/>
-            </form>
-        </div>
-    )
-}
+  return (
+    <div>
+      <label>
+        Estado:
+        <input type="text" value={state} onChange={(e) => setState(e.target.value.toLowerCase)} />
+      </label><br/>
+      <label>
+        Cidade:
+        <input type="text" value={city} onChange={(e) => setCity(e.target.value.toLowerCase)} />
+      </label><br/>
+      <label>
+        Bairro:
+        <input type="text" value={neighborhood} onChange={(e) => setNeighborhood(e.target.value.toLowerCase)} />
+      </label>
+      <button onClick={handleFilter}>Filtrar</button>
+    </div>
+  );
+};
