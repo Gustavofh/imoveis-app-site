@@ -13,17 +13,19 @@ export function Filter({ onFilter }) {
     <div className='Filters'><br/>
       <label>
         Estado:
-        <input type="text" value={state} onChange={(e) => setState(e.target.value)} />
+        <input className='input-state' type="text" value={state} onChange={(e) => setState(e.target.value)} />
       </label>
       <label>
         Cidade:
-        <input type="text" value={city} onChange={(e) => setCity(e.target.value)} />
+        <input className='input-city' type="text" value={city} onChange={(e) => setCity(e.target.value)} />
       </label>
       <label>
         Bairro:
-        <input type="text" value={neighborhood} onChange={(e) => setNeighborhood(e.target.value)} />
+        <input className='input-neighborhood' type="text" value={neighborhood} onChange={(e) => setNeighborhood(e.target.value)} />
       </label><br/><br/>
-      <button className='filter-btn' onClick={handleFilter}>Filtrar</button>
+      <div className='filter-btn'>Filtrar
+        <button className='filter-button' onClick={handleFilter} />
+      </div>
       <br/>
     </div>
   );

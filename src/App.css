@@ -8,7 +8,7 @@
 }
 
 body {
-  background: #8758ff;
+  background: #bba6f4;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,13 +18,13 @@ body {
   text-align: center;
 }
 
-h1 {
+/* h1 {
   color: #fff;
   margin-bottom: 0.5rem;
   font-size: 1.75rem;
-}
+} */
 
-.FinalTable {
+/* .FinalTable {
   width: 300px;
   border: 15px solid green;
   padding: 50px;
@@ -37,19 +37,7 @@ h1 {
   margin-bottom: 2rem;
   width: 300px;
   color: #fff;
-}
-
-.todo-input::placeholder {
-  color: #ffffff4d;
-}
-
-.filter-btn {
-  background: #8758ff;
-  color: #fff;
-  border: none;
-  padding: 0.55rem;
-  cursor: pointer;
-}
+} */
 
 .Filter {
   display: flex;
@@ -62,4 +50,36 @@ h1 {
   margin-bottom: 1rem;
 }
 
- 
+.input-state {
+  border-radius: 5px;
+  justify-content: space-between;
+  margin-left: 5px;
+  margin-right: 20px;
+}
+
+.input-city {
+  border-radius: 5px;
+  /* padding: 50px; */
+  margin-left: 5px;
+  margin-right: 20px;
+}
+
+.input-neighborhood {
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 20px;
+}
+
+.filter-btn {
+  background: #000000;
+  color: #ffffff;
+  border-radius: 10px;
+  cursor: pointer;
+  box-sizing: 10px;
+  padding: 10px;
+  width: 10rem;
+}
+
+.table {
+  background: #ffffff;
+}

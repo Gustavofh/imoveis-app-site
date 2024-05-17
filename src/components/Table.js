@@ -42,15 +42,15 @@ export const FinalTable = ({ filter }) => {
     
     return (
         <TableContainer className='FinalTable' component={Paper}>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <Table className='table' aria-label="simple table">
                 <TableHead>
                 <TableRow>
-                    <TableCell>state</TableCell>
-                    <TableCell align="right">city</TableCell>
-                    <TableCell align="right">neighborhood</TableCell>
-                    <TableCell align="right">value</TableCell>
-                    <TableCell align="right">address</TableCell>
-                    <TableCell align="right">propertyType</TableCell>
+                    <TableCell><b>Estado</b></TableCell>
+                    <TableCell align="right"><b>Cidade</b></TableCell>
+                    <TableCell align="right"><b>Bairro</b></TableCell>
+                    <TableCell align="right"><b>Valor</b></TableCell>
+                    <TableCell align="right"><b>Endereço</b></TableCell>
+                    <TableCell align="right"><b>Tipo de Propriedade</b></TableCell>
                 </TableRow>
                 </TableHead>
                 <TableBody>
