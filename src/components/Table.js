@@ -6,22 +6,27 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import { doRequest } from '../Requests';
 
+const testTable = await doRequest()
 
-const testTable = [
-    { "state": "SP", "city": "São Paulo", "neighborhood": "Centro", "value": 500000, "address": "Rua A, 123", "propertyType": "Apartamento" },
-    { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
-    { "state": "RS", "city": "Porto Alegre", "neighborhood": "Medianeira", "value": 900809, "address": "Avenida a, 102", "propertyType": "Casa" },
-    { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
-    { "state": "ES", "city": "Vitoria", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
-    { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
-    { "state": "SC", "city": "Florianopolis", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Apartamento" },
-    { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
-    { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
-    { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
-    { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
-    { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
-]
+// console.log(JSON.stringify(table))
+// const testTable = table
+
+// const testTable = [
+//     { "state": "SP", "city": "São Paulo", "neighborhood": "Centro", "value": 500000, "address": "Rua A, 123", "propertyType": "Apartamento" },
+//     { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
+//     { "state": "RS", "city": "Porto Alegre", "neighborhood": "Medianeira", "value": 900809, "address": "Avenida a, 102", "propertyType": "Casa" },
+//     { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
+//     { "state": "ES", "city": "Vitoria", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
+//     { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
+//     { "state": "SC", "city": "Florianopolis", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Apartamento" },
+//     { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
+//     { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
+//     { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
+//     { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
+//     { "state": "RJ", "city": "Rio de Janeiro", "neighborhood": "Copacabana", "value": 750000, "address": "Avenida B, 456", "propertyType": "Casa" },
+// ]
 
 export const FinalTable = ({ filter }) => {
 
@@ -73,8 +78,6 @@ export const FinalTable = ({ filter }) => {
         </TableContainer>
     );
 }
-
-
 
 // const Table = ({ filter }) => {
     // const [data, setData] = useState([

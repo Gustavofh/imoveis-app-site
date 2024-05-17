@@ -23,9 +23,7 @@ export function Filter({ onFilter }) {
         Bairro:
         <input className='input-neighborhood' type="text" value={neighborhood} onChange={(e) => setNeighborhood(e.target.value)} />
       </label><br/><br/>
-      <div className='filter-btn'>Filtrar
-        <button className='filter-button' onClick={handleFilter} />
-      </div>
+        <button className='filter-button' onClick={handleFilter}>Filtrar</button>
       <br/>
     </div>
   );
