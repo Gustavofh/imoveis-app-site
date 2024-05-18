@@ -9,7 +9,7 @@
 
 body {
   background: #a9b1b4;
-  display: flex;
+  display: flexbox;
   justify-content: center;
   align-items: center;
 }
@@ -18,48 +18,21 @@ body {
   text-align: center;
 }
 
-/* h1 {
-  color: #fff;
-  margin-bottom: 0.5rem;
-  font-size: 1.75rem;
-} */
-
-/* .FinalTable {
-  width: 300px;
-  border: 15px solid green;
-  padding: 50px;
-  margin: 20px;
-  outline: none;
-  background: black;
-  border: 1px solid #8758ff;
-  padding: 0.5rem 1rem;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  width: 300px;
-  color: #fff;
-} */
-
-.Filter {
-  display: flex;
-  justify-content: space-between;
+h1 {
+  color: #000000;
+  text-align: center;
+  justify-content: center;
   align-items: center;
-  background: #8758ff;
-  color: #fff;
-  padding: 0.75rem 1rem;
-  border-radius: 5px;
-  margin-bottom: 1rem;
 }
 
 .input-state {
   border-radius: 5px;
-  justify-content: space-between;
   margin-left: 5px;
   margin-right: 20px;
 }
 
 .input-city {
   border-radius: 5px;
-  /* padding: 50px; */
   margin-left: 5px;
   margin-right: 20px;
 }
@@ -70,7 +43,7 @@ body {
   margin-right: 20px;
 }
 
-.filter-btn {
+/* .filter-button {
   background: #000000;
   color: #ffffff;
   border-radius: 10px;
@@ -78,8 +51,73 @@ body {
   box-sizing: 10px;
   padding: 10px;
   width: 10rem;
-}
+  border-radius: 10px;
+  font-size: 1rem;
+} */
 
 .table {
   background: #ffffff;
+}
+
+/* CSS */
+.filter-button {
+  background: #5E5DF0;
+  border-radius: 999px;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+
+
+/* src/App.css */
+.header {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  background: #000;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: unset;
+  margin: unset;
+}
+
+li {
+  padding: 14px;
+  transition: all 0.3s linear;
+}
+
+li:hover {
+  background: gray;
+  cursor: pointer;
+  color: #fff;
+}
+
+.dropdown-menu {
+  background: #fff;
+  transition: all 0.3s linear;
 }

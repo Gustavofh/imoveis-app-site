@@ -1,0 +1,57 @@
+/* src/components/HamburgerMenu.css */
+.hamburger-menu {
+    position: relative;
+  }
+  
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    margin: 4px 0;
+    transition: transform 0.3s;
+  }
+  
+  .open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  .menu-content {
+    position: absolute;
+    top: 50px; /* Ajuste conforme necessário */
+    left: 0px; /* Ajuste conforme necessário */
+    background: #6d6ff5;
+    box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.05);
+    transition: all 0.3s linear;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    padding: 14px;
+    transition: all 0.3s linear;
+  }
+  
+  li:hover {
+    background: gray;
+    cursor: pointer;
+    color: #fff;
+  }
+  
