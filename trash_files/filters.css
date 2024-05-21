@@ -1,0 +1,108 @@
+.menu-icon{
+
+}
+
+.input-state {
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 20px;
+}
+  
+.input-city {
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 20px;
+}
+
+.input-neighborhood {
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 20px;
+}
+
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-conten-filter {
+    position: absolute;
+    top: 50px; 
+    left: 0px; 
+    background: #8687d6;
+    box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.05);
+    transition: width 2s, height 4s;
+}
+
+.open .menu-content {
+  transform: translateX(0); /* Quando aberto, move-se para o centro */
+  transition-timing-function: ease-in-out;
+
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 14px;
+    transition: all 0.3s linear;
+}
+
+li:hover {
+    background: gray;
+    cursor: pointer;
+    color: #fff;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    margin: 4px 0;
+    transition: transform 0.3s;
+    float: right;
+  }
+  
+  .open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  .menu-content-filter {
+    position: absolute;
+    top: 50px; /* Ajuste conforme necessário */
+    left: 0px; /* Ajuste conforme necessário */
+    background: #cd5858;
+    box-shadow: 0px 10px 30px 0px rgba(82, 63, 105, 0.05);
+    transition: all 0.3s linear;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    padding: 14px;
+    transition: all 0.3s linear;
+  }
+  
+  li:hover {
+    background: gray;
+    cursor: pointer;
+    color: #fff;
+  }
+  
