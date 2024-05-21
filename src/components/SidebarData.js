@@ -37,5 +37,4 @@ export const SidebarData = [
         icon: <BiSupport />,
         cName: 'nav-text'
     }
-
 ]
