@@ -1,6 +1,6 @@
 // src/components/HamburgerMenu.js
 import React, { useState } from "react";
-import "./HamburgerMenu.css"; // Estilos para o menu
+import "../templatesCss/dropdown-menu.css"; 
 
 const HamburgerMenu = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -11,11 +11,7 @@ const HamburgerMenu = () => {
 
   return (
     <div className="hamburger-menu">
-      <div className={`menu-icon ${isMenuOpen ? "open" : ""}`} onClick={handleMenuClick}>
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
-      </div>
+      <button className={`menu-icon ${isMenuOpen ? "open" : ""}`} onClick={handleMenuClick}>Menu</button>
       {isMenuOpen && (
         <div className="menu-content">
           <ul>
