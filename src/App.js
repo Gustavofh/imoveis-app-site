@@ -1,23 +1,25 @@
-import React, { useState } from 'react';
-import { Filter } from './components/Filters';
-import { FinalTable } from './components/Table';
-import './templatesCss/App.css';
-import DropdownMenu from './components/DropdownMenu';
-import { NavBar } from './components/Navbar_withProSidebar';
+import React from 'react';
+import './App.css';
+import { Navbar } from './components/Navbar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Table from './pages/Table';
+// import Reports from './pages/Reports';
+// import Products from './pages/Products';
 
-const App = () => {
-  const [filter, setFilter] = useState({ state: '', city: '', neighborhood: '' });
-
+function App() {
   return (
-    <div>
-      <div>
-        <header className="App-header">
-          <h1 className="App-title">Encontre seu imóvel<br/>na Bloco.</h1>
-        </header>
-        <NavBar />
-      </div>
-    </div>
+    <>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path='/' exact component={Home} />
+          <Route path='/table' component={Table} />
+          {/* <Route path='/products' component={Products} /> */}
+        </Routes>
+      </Router>
+    </>
   );
-};
+}
 
 export default App;
