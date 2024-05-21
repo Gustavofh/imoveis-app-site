@@ -7,6 +7,7 @@ import Table from './pages/Table';
 import Support from './pages/Support';
 import Favorites from './pages/Favorites';
 import Dashboard from './pages/Dashboard';
+import Logout from './pages/Logout';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/table' element={<Table />} />
           <Route path='/favorites' element={<Favorites />} />
           <Route path='/support' element={<Support />} />
+          <Route path='/logout' element={<Logout />} />
         </Routes>
       </Router>
     </>

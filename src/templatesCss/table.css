@@ -3,22 +3,22 @@
     box-sizing: border-box;
     empty-cells: show;
     position: initial;
-    top: 40px;
-    left: 20px;
+    /* top: 40px;
+    left: 20px; */
     border-collapse: collapse;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px;
     margin-top: 20px;
     margin-left: 2.5%;
-    margin-right: 2.5%;
+    margin-right: 2.5%; */
   }
 
 .table-head {
-  background-color: #7e7e7e;
+  background-color: #ffffff;
   font-weight: bold;
   font-size:x-large;
 }
 
 .table {
-    background-color: #e0dddd;
+    background-color: #ffffff;
 }
   

@@ -8,8 +8,11 @@
 }
 
 .home,
+.dashboard,
 .table,
-.support {
+.favorites,
+.support,
+.logout {
   display: flex;
   height: 90vh;
   align-items: center;

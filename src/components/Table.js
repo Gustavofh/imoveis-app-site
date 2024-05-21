@@ -7,7 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { doRequest } from './Requests';
-import '../templatesCss/table.css'
+import '../templatesCss/Table.css'
 
 const testTable = await doRequest()
 
@@ -18,7 +18,7 @@ export const FinalTable = () => {
     const [filteredData, setFilteredData] = React.useState(data);
     
     return (
-        <div className='main-table'>
+        <>
             <TableContainer className='FinalTable' component={Paper}>
                 <Table className='table' aria-label="simple table">
                 <TableHead>
@@ -49,7 +49,7 @@ export const FinalTable = () => {
                     </TableBody>
                 </Table>
             </TableContainer>
-        </div>
+        </>
     );
 }
 

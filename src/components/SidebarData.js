@@ -4,6 +4,7 @@ import { RxTable } from "react-icons/rx";
 import { BiSupport } from "react-icons/bi";
 import { TbFolderStar } from "react-icons/tb";
 import { BsFileBarGraph } from "react-icons/bs";
+import { TbLogout2 } from "react-icons/tb";
 
 
 export const SidebarData = [
@@ -20,7 +21,7 @@ export const SidebarData = [
         cName: 'nav-text'
     },
     {
-        title: 'Busca imóvel',
+        title: 'Busca imóveis',
         path: '/table',
         icon: <RxTable />,
         cName: 'nav-text'
@@ -32,9 +33,15 @@ export const SidebarData = [
         cName: 'nav-text'
     },
     {
-        title: 'Suporte',
+        title: 'Fale conosco',
         path: '/support',
         icon: <BiSupport />,
+        cName: 'nav-text'
+    },
+    {
+        title: 'Sair',
+        path: '/logout',
+        icon: <TbLogout2 />,
         cName: 'nav-text'
     }
 ]
