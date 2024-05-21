@@ -1,8 +1,9 @@
 import React from 'react';
-import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
-import * as IoIcons from 'react-icons/io';
 import { RxTable } from "react-icons/rx";
+import { BiSupport } from "react-icons/bi";
+import { TbFolderStar } from "react-icons/tb";
+import { BsFileBarGraph } from "react-icons/bs";
 
 
 export const SidebarData = [
@@ -13,9 +14,28 @@ export const SidebarData = [
         cName: 'nav-text'
     },
     {
-        title: 'Tabela',
+        title: 'Dashboard',
+        path: '/dashboard',
+        icon: <BsFileBarGraph />,
+        cName: 'nav-text'
+    },
+    {
+        title: 'Busca imóvel',
         path: '/table',
         icon: <RxTable />,
         cName: 'nav-text'
+    },
+    {
+        title: 'Favoritos',
+        path: '/favorites',
+        icon: <TbFolderStar />,
+        cName: 'nav-text'
+    },
+    {
+        title: 'Suporte',
+        path: '/support',
+        icon: <BiSupport />,
+        cName: 'nav-text'
     }
+
 ]

@@ -4,8 +4,9 @@ import { Navbar } from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Table from './pages/Table';
-// import Reports from './pages/Reports';
-// import Products from './pages/Products';
+import Support from './pages/Support';
+import Favorites from './pages/Favorites';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
@@ -13,9 +14,11 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path='/' exact component={Home} />
-          <Route path='/table' component={Table} />
-          {/* <Route path='/products' component={Products} /> */}
+          <Route path='/' exact element={<Home />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/table' element={<Table />} />
+          <Route path='/favorites' element={<Favorites />} />
+          <Route path='/support' element={<Support />} />
         </Routes>
       </Router>
     </>

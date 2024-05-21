@@ -11,22 +11,11 @@ import '../templatesCss/table.css'
 
 const testTable = await doRequest()
 
-export const FinalTable = ({ filter }) => {
+export const FinalTable = () => {
 
     const [data, setData] = React.useState(testTable);
 
     const [filteredData, setFilteredData] = React.useState(data);
-
-    React.useEffect(() => {
-        const filtered = data.filter(item => {
-          return (
-            (filter.state ? item.state.includes(filter.state.toUpperCase()) : true) &&
-            (filter.city ? item.city.includes(filter.city) : true) &&
-            (filter.neighborhood ? item.neighborhood.includes(filter.neighborhood) : true)
-          );
-        });
-        setFilteredData(filtered);
-      }, [filter, data]);
     
     return (
         <div className='main-table'>
@@ -63,6 +52,59 @@ export const FinalTable = ({ filter }) => {
         </div>
     );
 }
+
+// export const FinalTable = ({ filter }) => {
+
+//     const [data, setData] = React.useState(testTable);
+
+//     const [filteredData, setFilteredData] = React.useState(data);
+
+//     React.useEffect(() => {
+//         const filtered = data.filter(item => {
+//           return (
+//             (filter.state ? item.state.includes(filter.state.toUpperCase()) : true) &&
+//             (filter.city ? item.city.includes(filter.city) : true) &&
+//             (filter.neighborhood ? item.neighborhood.includes(filter.neighborhood) : true)
+//           );
+//         });
+//         setFilteredData(filtered);
+//       }, [filter, data]);
+    
+//     return (
+//         <div className='main-table'>
+//             <TableContainer className='FinalTable' component={Paper}>
+//                 <Table className='table' aria-label="simple table">
+//                 <TableHead>
+//                     <TableRow className='table-head'>
+//                         <TableCell><b>Estado</b></TableCell>
+//                         <TableCell align="right"><b>Cidade</b></TableCell>
+//                         <TableCell align="right"><b>Bairro</b></TableCell>
+//                         <TableCell align="right"><b>Endereço</b></TableCell>
+//                         <TableCell align="right"><b>Tipo de Propriedade</b></TableCell>
+//                         <TableCell align="right"><b>Valor</b></TableCell>
+//                     </TableRow>
+//                     </TableHead>
+//                     <TableBody>
+//                         {filteredData.map((item, index) => (
+//                             <TableRow
+//                             key={index}
+//                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+//                             <TableCell component="th" scope="row">
+//                             {item.state}
+//                             </TableCell>
+//                             <TableCell align="right">{item.city}</TableCell>
+//                             <TableCell align="right">{item.neighborhood}</TableCell>
+//                             <TableCell align="right">{item.address}</TableCell>
+//                             <TableCell align="right">{item.propertyType}</TableCell>
+//                             <TableCell align="right">{item.value}</TableCell>
+//                         </TableRow>
+//                         ))}
+//                     </TableBody>
+//                 </Table>
+//             </TableContainer>
+//         </div>
+//     );
+// }
 
 // import React, { useMemo } from 'react';
 // import { useTable, useFilters } from 'react-table';
