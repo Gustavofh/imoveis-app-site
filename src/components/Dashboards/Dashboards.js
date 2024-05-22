@@ -29,16 +29,9 @@ export function Dashboards() {
 
   const results = Object.entries(
     filteredChartData.reduce((acc, item) => {
-      if (!stateFilter) {
-        const { state } = item;
-        acc[state] = (acc[state] || 0) + 1;
-      } if (stateFilter) {
-        const { city } = item;
-        acc[city] = (acc[city] || 0) + 1;
-      } if (cityFilter) {
-        const { neighborhood } = item;
-        acc[neighborhood] = (acc[neighborhood] || 0) + 1;
-      }
+      const { state, city, neighborhood } = item;
+      const location = cityFilter ? neighborhood : stateFilter ? city : state;
+      acc[location] = (acc[location] || 0) + 1;
       return acc;
     }, {})
   ).map(([location, count]) => ({
