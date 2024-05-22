@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
 import '../templatesCss/Navbar.css';
 import { IconContext } from 'react-icons';
-import git from './git.jpeg'
+// import git from './git.jpeg'
 
 export function Navbar() {
   const [sidebar, setSidebar] = useState(false);
@@ -26,7 +26,7 @@ export function Navbar() {
             <FaIcons.FaBars onClick={showSidebar} size={25}/>
           </Link>
           <text className='custom-text'>SEU IMÓVEL NA<br/>BLOCO</text>
-          <img className='menu-img' src={git} alt="Logo" onClick={showSidebar} style={{ width: '50px', height: 'auto' }}/>
+          {/* <img className='menu-img' src={git} alt="Logo" onClick={showSidebar} style={{ width: '50px', height: 'auto' }}/> */}
         </div>
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'} onMouseLeave={closeSidebarOnMouseLeave} >
           <ul className='nav-menu-items' onClick={showSidebar}>

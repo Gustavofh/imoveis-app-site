@@ -1,9 +1,10 @@
 import React from 'react';
+import { Dashboards } from '../components/Dashboards/Dashboards'
 
 function Dashboard() {
   return (
     <div className='dashboard'>
-      <h1>Dashboard dos dados</h1>
+      <Dashboards />
     </div>
   );
 }
