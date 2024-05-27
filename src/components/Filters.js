@@ -1,67 +1,111 @@
-import React, { useState } from 'react';
-import "../templatesCss/button.css"; 
-import "../templatesCss/filters.css"; 
+import { Select, MenuItem, InputLabel, FormControl } from '@mui/material';
+import '/Users/C93670A/Desktop/web-app/imoveis-app-site/src/templatesCss/Filters.css'
 
-export function Filter({ onFilter }) {
-  const [state, setState] = useState('');
-  const [city, setCity] = useState('');
-  const [neighborhood, setNeighborhood] = useState('');
-  const [isFilterOpen, setFilterMenu] = useState(false); // Adicione o estado isFilterOpen aqui
+export function Filters({ data, setFilteredData, stateFilter, setStateFilter, cityFilter, setCityFilter, neighborhoodFilter, setNeighborhoodFilter }) {
 
-  const handleFilter = (e) => {
-    e.preventDefault();
-    onFilter({ state, city, neighborhood });
-    setFilterMenu(!isFilterOpen);
-  };
+  const citiesByState = {};
 
-  const handleClearFilters = () => {
-    setState('');
-    setCity('');
-    setNeighborhood('');
-    onFilter({ state: '', city: '', neighborhood: '' });
-    setFilterMenu(!isFilterOpen);
-  };
+  const chartData = data.map(item => ({
+    state: item.state,
+    city: item.city,
+    neighborhood: item.neighborhood,
+    value: Number(item.value),
+  }));
 
-  const handleFilterClick = () => {
-    setFilterMenu(!isFilterOpen); // Alterna o valor do estado isFilterOpen
-  };
+  chartData.forEach(item => {
+    if (!citiesByState[item.state]) {
+      citiesByState[item.state] = [];
+    }
+    citiesByState[item.state].push(item.city);
+  });
+
+  const filteredChartData = chartData.filter(item => {
+    const stateMatch = item.state.toLowerCase().includes(stateFilter.toLowerCase());
+    const cityMatch = item.city.toLowerCase().includes(cityFilter.toLowerCase());
+    const neighborhoodMatch = item.neighborhood.toLowerCase().includes(neighborhoodFilter.toLowerCase());
+    return stateMatch && cityMatch && neighborhoodMatch;
+  });
+
+  setFilteredData(filteredChartData)
+
+  console.log(filteredChartData)
 
   return (
     <>
-      <div className='filter-btn'>
-        <button className={`menu-icon-filter ${isFilterOpen ? "open" : ""}`} onClick={handleFilterClick}>FILTER</button>
-      </div>
-      <div className='Filters'>
-      {isFilterOpen && (
-        <div className='menu-content-filter'>
-          <form onSubmit={handleFilter}>
-              <ul>
-                <li>
-                  <label>
-                    Estado:
-                    <input className='input-state' type="text" value={state} onChange={(e) => setState(e.target.value)} />
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    Cidade:
-                    <input className='input-city' type="text" value={city} onChange={(e) => setCity(e.target.value)} />
-                  </label>
-                </li>
-                <li>
-                  <label>
-                    Bairro:
-                    <input className='input-neighborhood' type="text" value={neighborhood} onChange={(e) => setNeighborhood(e.target.value)} />
-                  </label>
-                </li>
-              </ul>
-            <div className='ButtonGroup'>
-              <button className='filter-button' type="submit" onClick={handleFilter}>Filtrar</button>
-              <button className='clear-button' type="submit" onClick={handleClearFilters}>Limpar Filtros</button>
-            </div>
-          </form>
-        </div>
-      )}
+      <div className='filters'>
+        <FormControl className='estado-filter'>
+          <InputLabel>Estado</InputLabel>
+          <Select
+            value={stateFilter}
+            onChange={e => {
+              if (e.target.value === 'Todos') {
+                setStateFilter('');
+                setCityFilter('');
+              } else {
+                setStateFilter(e.target.value);
+                setCityFilter('');
+                setNeighborhoodFilter('');
+              }
+            }}
+          >
+            <MenuItem value="Todos">-- Todos os estados --</MenuItem>
+            {Array.from(new Set(chartData.map(item => item.state))).map(state => (
+              <MenuItem key={state} value={state}>
+                {state}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+        <FormControl className='cidade-filter'>
+          <InputLabel>Cidade</InputLabel>
+          <Select
+            value={cityFilter}
+            onChange={e => {
+              if (e.target.value === 'Todos') {
+                setCityFilter('');
+              } else {
+                setCityFilter(e.target.value);
+              }
+              setNeighborhoodFilter('');
+            }}
+          >
+            <MenuItem value="Todos">-- Todas as cidades --</MenuItem>
+            {stateFilter
+              ? Array.from(new Set(citiesByState[stateFilter])).map(city => (
+                  <MenuItem key={city} value={city}>
+                    {city}
+                  </MenuItem>
+                ))
+              : Array.from(new Set(chartData.map(item => item.city))).map(city => (
+                  <MenuItem key={city} value={city}>
+                    {city}
+                  </MenuItem>
+                ))}
+          </Select>
+        </FormControl>
+        <FormControl className='bairro-filter'>
+          <InputLabel>Bairro</InputLabel>
+          <Select
+            value={neighborhoodFilter}
+            onChange={e => {
+              if (e.target.value === 'Todos') {
+                setNeighborhoodFilter('');
+              } else {
+                setNeighborhoodFilter(e.target.value);
+              }
+            }}
+          >
+            {cityFilter ? (
+              Array.from(new Set(chartData.filter(item => item.city === cityFilter).map(item => item.neighborhood))).map(neighborhood => (
+                <MenuItem key={neighborhood} value={neighborhood}>
+                  {neighborhood}
+                </MenuItem>
+              ))
+            ) : (
+              <MenuItem value="">-- Selecione uma cidade --</MenuItem>
+            )}
+          </Select>
+        </FormControl>
       </div>
     </>
   );
